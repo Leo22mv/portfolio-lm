@@ -1,0 +1,22 @@
+<div class="d-flex align-items-center full-height">
+    <div class="d-flex align-items-center justify-content-around full-width flex-container">
+        <div>
+            <h1>Leo Martinez</h1>
+            <h3>Desarrollador de <span class="animated-shadow">software</span></h3>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="scrollTo('proyects-section')">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="scrollTo('about-me-section')">Sobre mi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="scrollTo('contact-section')">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="engine">
+        </div> -->
+        <canvas #rendererCanvas id="renderCanvas" class="engine"></canvas>
+    </div>
+</div>

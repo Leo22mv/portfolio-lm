@@ -1,0 +1,54 @@
+.card-container {
+    padding-top: 10vh;
+}
+.card {
+    background-color: #eee;
+    box-shadow: 2px 2px 2px gray;
+    transition: 0.3s all;
+}
+.card:hover {
+    box-shadow: 2px 2px 2px black;
+    border-color: black;
+}
+.card a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.link-container {
+    display: flex;
+    justify-content: center;
+}
+.bi {
+    margin-left: 10px;
+}
+.link-container i {
+    cursor: pointer;
+}
+.modal-content {
+    background-color: #eee;
+    /* width: 100vw; */
+}
+.modal-dialog {
+    width: 100vw;
+}
+.carousel {
+    border: 3px solid gray;
+    border-radius: 5px;
+}
+
+@media (max-width: 640px) {
+    .card-container {
+        flex-direction: column;
+    }
+    .card {
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 641px) {
+    .card:first-child {
+        margin-right: 50px;
+    }
+    .card {
+        min-height: 200px;
+    }
+}

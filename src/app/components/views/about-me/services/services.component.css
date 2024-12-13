@@ -1,0 +1,30 @@
+.card {
+    /* margin: 15px 0 15px 15px; */
+    /* margin: 15px; */
+    background-color: #eee;
+    /* height: min-content; */
+    border-radius: 0;
+}
+.list-group-item {
+    cursor: pointer;
+}
+.container {
+    display: flex;
+}
+.collapse {
+    margin: 0;
+}
+.bi {
+    margin-right: 8px;
+}
+.card-footer {
+    display: flex;
+    justify-content: center;
+}
+.accordion-body {
+    padding: 0;
+}
+.services-card {
+    width: 100%;
+    margin: 15px 0;
+}

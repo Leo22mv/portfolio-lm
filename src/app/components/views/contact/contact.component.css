@@ -1,0 +1,60 @@
+.triangle {
+    position: relative;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    height: min-content;
+}
+  
+.triangle::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 30px 0 30px;
+    border-color: #111 transparent transparent transparent;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+}
+.bg {
+    min-height: 100vh;
+}
+.card {
+    /* margin: 5px; */
+    /* width: 800px; */
+}
+.form-floating {
+    margin-bottom: 15px;
+}
+h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+}
+.card .btn {
+    margin-top: 15px;
+}
+input {
+    margin-bottom: 15px;
+}
+label {
+    margin-bottom: 5px;
+}
+.btn-success {
+    margin-top: 45px;
+}
+.btn-primary, .btn-dark {
+    margin-top: 15px;
+}
+.alert {
+    margin: 0;
+}
+.alert p {
+    margin: 0;
+}

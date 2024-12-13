@@ -1,0 +1,99 @@
+.full-height {
+    min-height: 100vh;
+}
+.engine {
+    /* border: 2px solid red; */
+    height: 400px;
+    width: 400px;
+    /* max-height: 400px;
+    max-width: 400px;
+    min-height: 200px;
+    min-width: 200px; */
+}
+.full-width {
+    width: 100vw;
+}
+h1 {
+    font-size: 100px;
+    /* text-decoration: underline; */
+    text-shadow: 3px 3px 3px black;
+}
+h3 {
+    font-size: 50px;
+    text-shadow: 2px 2px 2px black;
+}
+a {
+    font-size: 25px;
+}
+a {
+    padding: 0;
+    margin: 8px 50px 0 0;
+    color: black;
+    transition: 0.3s all;
+    text-decoration: underline;
+}
+a:hover {
+    color: gray;
+    cursor: pointer;
+    text-shadow: 0 1px 1px gray;
+}
+.animated-shadow {
+    animation: textShadowColor 6s infinite;
+    /* text-decoration: underline; */
+}
+
+@keyframes textShadowColor {
+    0% {
+        text-shadow: 2px 2px 2px black;
+    }
+    20% {
+        text-shadow: 2px 2px 2px darkred;
+    }
+    40% {
+        text-shadow: 2px 2px 2px red;
+    }
+    60% {
+        text-shadow: 2px 2px 2px purple;
+    }
+    80% {
+        text-shadow: 2px 2px 2px darkblue;
+    }
+    100% {
+        text-shadow: 2px 2px 2px black;
+    }
+}
+
+@media (max-width: 1050px) {
+    .flex-container {
+        flex-direction: column-reverse;
+    }
+    h1 {
+        font-size: 80px;
+        text-align: center;
+    }
+    h3 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .nav {
+        flex-direction: column;
+    }
+    a {
+        text-align: center;
+        margin: 0 0 5px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .engine {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media (min-width: 1900px) {
+    .engine {
+        height: 600px;
+        width: 600px;
+    }
+}

@@ -1,0 +1,88 @@
+<div class="bg">
+    <section class="triangle">
+        <h1>Contacto</h1>
+    </section>
+    <div class="centered">
+        <a class="btn btn-lg btn-success" href="https://wa.me/3513881618" target="_blank">
+            <i class="bi bi-whatsapp"></i>
+            WhatsApp
+            <!-- <i class="bi bi-box-arrow-up-right"></i> -->
+        </a>
+    </div>
+    <div class="centered">
+        <a class="btn btn-lg btn-primary" href="https://www.linkedin.com/in/leo-mv/" target="_blank">
+            <i class="bi bi-linkedin"></i>
+            LinkedIn
+            <!-- <i class="bi bi-box-arrow-up-right"></i> -->
+        </a>
+    </div>
+    <div class="centered">
+        <button class="btn btn-lg btn-dark" data-bs-toggle="modal" data-bs-target="#contactModal">
+            <i class="bi bi-chat-left-text"></i>
+            Enviar un mensaje
+        </button>
+    </div>
+    <div class="centered">
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="contactModalLabel">Enviar un mensaje</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- <div class="card"> -->
+                        <!-- <div class="card-body">                 -->
+                            <form action="https://formsubmit.co/leodev.mv@gmail.com" method="POST">
+                                <label for="floatingName">Nombre</label>
+                                <input name="floatingName" type="text" class="form-control" id="floatingName" placeholder="Nombre">
+                    
+                                <label for="floatingInput">Dirección de correo electrónico</label>
+                                <input name="floatingEmail" type="email" class="form-control" id="floatingEmail" placeholder="nombre@ejemplo.com">
+                                
+                                <label for="floatingTel">Número de teléfono</label>
+                                <input name="floatingTel" type="tel" class="form-control" id="floatingTel" placeholder="+54 XX-XXX-XXXX">
+                                
+                                <label for="floatingMsg">Mensaje</label>
+                                <textarea name="floatingMsg" rows="4" class="form-control" id="floatingMsg" placeholder="Deje su mensaje aqui..."></textarea>
+                    
+                                <div class="centered">
+                                    <button type="submit" class="btn btn-dark btn-lg">Enviar</button>
+                                </div>
+
+                                <div class="alert alert-danger" *ngIf="error">
+                                    Dirección de correo electrónico y/o número de teléfono requeridos.
+                                </div>
+
+                                <input type="hidden" name="_next" value="http://localhost:4200/?successMsg=true" />
+                                <input type="hidden" name="_captcha" value="false" />
+                            </form>
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="liveToast" class="toast align-items-center text-bg-success border-0 bottom-0 end-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+        <div class="toast-body">
+            Mensaje enviado correctamente.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>
+
+<div class="modal fade" id="successMsgModal" tabindex="-1" aria-labelledby="successMsgModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="alert alert-success" role="alert">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5>Mensaje enviado correctamente.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

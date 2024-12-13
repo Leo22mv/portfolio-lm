@@ -1,0 +1,9 @@
+h2 {
+    margin-top: 15px;
+    cursor: pointer;
+    display: inline;
+}
+.centered {
+    display: flex;
+    justify-content: center;
+}
