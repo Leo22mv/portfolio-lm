@@ -11,6 +11,8 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
+  error: boolean = false;
+
   ngAfterViewInit(): void {
     const queryParams = new URLSearchParams(window.location.search);
     const param = queryParams.get('successMsg');
@@ -37,5 +39,5 @@ export class ContactComponent {
       //   console.warn(`Query param "${param}" no encontrado en la URL.`);
       // }
     }
-  }
+  }  
 }
