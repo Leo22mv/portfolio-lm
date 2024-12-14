@@ -58,3 +58,10 @@ label {
 .alert p {
     margin: 0;
 }
+.alert-danger {
+    margin-top: 15px;
+    text-align: center;
+}
+.spinner-border {
+    margin-top: 15px;
+}

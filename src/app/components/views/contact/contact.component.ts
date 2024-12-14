@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,28 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
-  error: boolean = false;
+  fieldsError: boolean = false;
+  loading: boolean = false;
+
+  constructor (private route: ActivatedRoute, private router: Router) { }
+
+  ngOnInit(): void {
+    document.getElementById('contactForm')?.addEventListener('submit', (event) => {
+      this.fieldsError = false;
+      this.loading = false;
+
+      const email = (document.getElementById('floatingEmail') as any).value.trim();
+      const tel = (document.getElementById('floatingTel') as any).value.trim();
+
+      if (!email && !tel) {
+        event.preventDefault();
+        this.fieldsError = true;
+      } else {
+        this.loading = true;
+        (document.getElementById('submitBtn') as HTMLButtonElement).disabled = true;
+      }
+    });
+  }
 
   ngAfterViewInit(): void {
     const queryParams = new URLSearchParams(window.location.search);
@@ -31,13 +53,26 @@ export class ContactComponent {
       }
 
       // const url = new URL(window.location.href);
-      // if (url.searchParams.has(param)) {
-      //   url.searchParams.delete(param);
+      // console.log(url);
+      // console.log(url.searchParams.has(param))
+      // // if (url.searchParams) {
+      // //   url.searchParams.forEach(parameter => url.searchParams.delete(parameter));
       //   window.history.replaceState({}, '', url.toString());
-      //   console.log(`Query param "${param}" eliminado de la URL.`);
-      // } else {
-      //   console.warn(`Query param "${param}" no encontrado en la URL.`);
-      // }
+      // //   // console.log(`Query param "${param}" eliminado de la URL.`);
+      // // }
+      // url.search = '';
+
+      const queryParams = new URLSearchParams(window.location.search);
+      const param = queryParams.get('successMsg');
+      if (param) {
+        const queryParams = { ...this.route.snapshot.queryParams };
+        delete queryParams[param];
+        this.router.navigate([], {
+          queryParams: queryParams,
+          queryParamsHandling: 'merge',
+          replaceUrl: true,
+        });
+      }
     }
   }  
 }

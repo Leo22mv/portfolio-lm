@@ -33,7 +33,7 @@
                 <div class="modal-body">
                     <!-- <div class="card"> -->
                         <!-- <div class="card-body">                 -->
-                            <form action="https://formsubmit.co/leodev.mv@gmail.com" method="POST">
+                            <form id="contactForm" action="https://formsubmit.co/leodev.mv@gmail.com" method="POST">
                                 <label for="floatingName">Nombre</label>
                                 <input name="floatingName" type="text" class="form-control" id="floatingName" placeholder="Nombre">
                     
@@ -46,12 +46,17 @@
                                 <label for="floatingMsg">Mensaje</label>
                                 <textarea name="floatingMsg" rows="4" class="form-control" id="floatingMsg" placeholder="Deje su mensaje aqui..."></textarea>
                     
+                                <div class="alert alert-danger" *ngIf="fieldsError">
+                                    Dirección de correo electrónico y/o número de teléfono requeridos.
+                                </div>
                                 <div class="centered">
-                                    <button type="submit" class="btn btn-dark btn-lg">Enviar</button>
+                                    <div class="spinner-border" role="status" *ngIf="loading">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
                                 </div>
 
-                                <div class="alert alert-danger" *ngIf="error">
-                                    Dirección de correo electrónico y/o número de teléfono requeridos.
+                                <div class="centered">
+                                    <button id="submitBtn" type="submit" class="btn btn-dark btn-lg">Enviar</button>
                                 </div>
 
                                 <input type="hidden" name="_next" value="https://leomartinez.dev.ar/?successMsg=true" />
